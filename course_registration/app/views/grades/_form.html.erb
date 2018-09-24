@@ -1,0 +1,22 @@
+<% if @grade.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@grade.errors.count, "error") %>
+      prohibited this post from being saved:
+    </h2>
+    <% @grade.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </div>
+<% end %><br>
+
+<%= form_for @grade, url: "/students/#{@grade.student_id}/grades/#{@grade.id}" do |f| %>
+
+  <%= f.label :behavior %>
+  <%= f.text_field :behavior %><br>
+
+  <%= f.label :score %>
+  <%= f.number_field :score, min: 0, max: 100 %><br>
+
+  <%= f.submit %>
+  <% end %>

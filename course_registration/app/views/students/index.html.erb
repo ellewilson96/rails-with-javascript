@@ -1,0 +1,11 @@
+<h3>Welcome back, <%= current_user.email %></h3>
+  <h4>All Flatiron High School Students</h4>
+  <% @students.each do |student| %>
+<div>
+  <h3><%= student.first_name %> <%= student.last_name%></h3>
+  <%= link_to "View #{student.first_name}'s Grades", student_grades_path(student) %><br>
+  <%= link_to "Add New Grade for #{student.first_name}", new_student_grade_path(student) %>
+<% end %>
+<h3><%= link_to "Enroll a New Student", new_student_path %><br>
+<%= link_to "Top 3 Students", students_smartest_path %></h3>
+</div>

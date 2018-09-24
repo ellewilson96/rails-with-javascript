@@ -1,0 +1,13 @@
+<h4>Your Students</h4>
+  <% if @students.empty? %>
+  <h4>Looking for an existing student?<p><%= link_to 'Click Here to View All Students', students_path %></p></h4>
+  <% else %>
+<% @students.each do |student| %>
+<div>
+<h3><%= student.first_name %> <%= student.last_name%></h3>
+    <%= link_to "View #{student.first_name}'s Grades", student_grades_path(student) %>
+    <% end %>
+    <h3><%= link_to "Enroll a New Student", new_student_path %><br>
+      <%= link_to "Back to All Students", students_path %></h3>
+  </div>
+<% end %>

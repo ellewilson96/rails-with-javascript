@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Course Registration</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<style>
+body {background-color: powderblue;
+      font-family: "Calibri", sans-serif;
+      text-align: center;}
+h1   {color: #0000cd;}
+h2   {color: #4c4cff;
+      font-style: italic;}
+p    {color: #191970;}
+h3   {font-style: underline;
+      font-style: italic;
+      color: #0000aa;}
+h4   {font-style: underline;
+      font-style: italic;
+      color: #0000dd;}
+a {
+  color: #191970;
+}
+.center {
+  list-style-position: inside;
+}
+</style>
+<body>
+  <% if user_signed_in? %>
+  <%= link_to 'Logout', destroy_user_session_path, method: :delete %> |
+  <%= link_to 'Home', students_path %>
+
+  <% else %>
+  <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %> |
+  <%= link_to 'Sign Up', new_user_registration_path %> |
+  <%= link_to 'Login', new_user_session_path %>
+<% end %>
+  <h1>Welcome to the Fall Semester!</h1>
+    <h2>Teachers of Flatiron High School Only</h2>
+    <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+  <%= yield %>
+
+<br>
+<% if user_signed_in? %>
+<%= link_to 'Logout', destroy_user_session_path, method: :delete %> |
+<%= link_to 'Home', students_path %>
+
+<% else %>
+<%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %> |
+<%= link_to 'Login', new_user_session_path %> |
+<%= link_to 'Sign Up', new_user_registration_path %>
+<% end %>
+</body>
+</html>
