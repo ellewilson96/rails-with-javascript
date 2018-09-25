@@ -11,6 +11,7 @@ devise :database_authenticatable, :registerable,
 
  has_many :grades
  has_many :students, through: :grades
+ has_many :courses
 
  def self.from_omniauth(auth)
    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
@@ -28,5 +29,5 @@ devise :database_authenticatable, :registerable,
      end
    end
  end
- 
+
 end
