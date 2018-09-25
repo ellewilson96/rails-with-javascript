@@ -1,11 +1,13 @@
 class GradesController < ApplicationController
+  before_action :set_student
 
   def index
-    @student = Student.find_by_id(params[:student_id])
-    @grades = Grade.all
+    @grades = @student.grades
+    respond_to do |format|
+         format.html { render :index }
+         format.json { render json: @grades }
   end
-  def show
-  end
+end
 
   def new
   @student = Student.find_by_id(params[:student_id])
@@ -14,17 +16,22 @@ class GradesController < ApplicationController
 
   def create
     @grade = current_user.grades.build(grade_params)
-    @grade.student = Student.find_by_id(params[:student_id])
     if @grade.save
-      redirect_to students_path
-    else
+      respond_to do |format|
+           format.html { redirect_to students_path }
+           format.json { render json: @grade, status: 201 }
+         end
+        else
       render :new
     end
   end
 
-  def edit
-    @grade = Grade.find(params[:id])
-end
+  def show
+    respond_to do |format|
+     format.html { render :show }
+     format.json { render json: @grade }
+   end
+ end
 
   def update
     @url = student_grade_path
@@ -46,8 +53,8 @@ end
     params.require(:grade).permit(:student_id, :user_id, :score, :behavior)
   end
 
-  def set_grade
-    @grade = Grade.find(params[:id])
+  def set_student
+    @student = Student.find(params[:student_id])
   end
 
 end

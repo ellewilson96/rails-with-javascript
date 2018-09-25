@@ -6,7 +6,7 @@
 No grades available for <%= @student.first_name %> <%= @student.last_name %>.<br>
     <%= link_to "Add Grades for #{@student.first_name}", new_student_grade_path(@student) %>
   <% else %>
-  <%= link_to "View #{@student.first_name}'s Grades", student_grades_path(@student) %>
+  <%= link_to "View #{@student.first_name}'s Grades", student_grades_path(@student), :class => "load_grades" %>
       <% end %></h4>
 <br>
 <h3><%= link_to "Enroll a New Student", new_student_path %><br>
