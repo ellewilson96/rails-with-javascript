@@ -1,0 +1,25 @@
+<% if @course.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@course.errors.count, "error") %>
+      prohibited this post from being saved:
+    </h2>
+    <% @course.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </div>
+<% end %><br>
+
+<%= form_for @course, url: "/courses/#{@course.id}" do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
+
+  <%= f.label :description %>
+  <%= f.text_field :description %><br>
+
+  <%= f.label :section %>
+  <%= f.number_field :section, min: 100, max: 999 %><br>
+
+  <%= f.submit %>
+  <% end %>

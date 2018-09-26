@@ -1,0 +1,10 @@
+<h2>This Semester's Courses</h2>
+<ol><% @courses.each do |course| %>
+      <li><%= course.section %><%= course.name %><br>
+        <a href="#">Course Details</a><br>
+        <a href="#">View Students Enrolled in this Course</a><br>
+      </li>
+    </ol>
+  <% end %>
+  <%= link_to "Add New Course for Fall 2018", new_course_path %>
+</h4>

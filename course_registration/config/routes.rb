@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     resources :grades
   end
 
+  resources :courses
+  
   resources :users, only: [:show]
 
   root to: 'application#home'
