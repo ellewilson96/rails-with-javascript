@@ -10,7 +10,7 @@
   </div>
 <% end %><br>
 
-<%= form_for @course, url: "/courses/#{@course.id}" do |f| %>
+<%= form_for @course do |f| %>
 
   <%= f.label :name %>
   <%= f.text_field :name %><br>

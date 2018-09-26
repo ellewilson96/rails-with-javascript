@@ -26,14 +26,6 @@ class StudentsController < ApplicationController
     @student = Student.find_by_id(params[:id])
   end
 
-  def update
-
-  end
-
-  def destroy
-
-  end
-
   private
 
   def student_params

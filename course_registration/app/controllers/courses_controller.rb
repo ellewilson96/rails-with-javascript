@@ -1,6 +1,6 @@
 class CoursesController < ApplicationController
     def index
-        @courses = Course.all
+      @courses = Course.all
     end
 
     def show
@@ -13,6 +13,7 @@ class CoursesController < ApplicationController
 
     def create
       @course = current_user.courses.build(course_params)
+      binding.pry
       if @course.save
         redirect_to course_path(@course)
       else
