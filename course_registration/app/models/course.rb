@@ -1,7 +1,7 @@
 class Course < ActiveRecord::Base
+  has_many :rosters
   has_many :users
   has_many :students
-  has_many :rosters
 
   validates :name, presence: true
   validates :description, presence: true

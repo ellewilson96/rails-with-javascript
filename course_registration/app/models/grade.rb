@@ -1,6 +1,6 @@
 class Grade < ActiveRecord::Base
-  belongs_to :user
   belongs_to :student
+  belongs_to :user
 
   validates :behavior, presence: true
   validates :score, presence: true
