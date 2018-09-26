@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   end
 
   resources :courses
-
+  resources :rosters 
   resources :users, only: [:show]
 
   root to: 'application#home'

@@ -9,7 +9,7 @@ class CoursesController < ApplicationController
     end
 
     def enroll
-      @student = Student.find_by(params[:student_id])
+      @roster = Roster.new
     end
 
     def new
@@ -20,6 +20,7 @@ class CoursesController < ApplicationController
     def create
       @course = Course.new(course_params)
       if @course.save
+        Roster.create(:user_id => (current_user.id), :course_id => (@course.id))
         redirect_to user_path(current_user.id)
       else
         render :new
