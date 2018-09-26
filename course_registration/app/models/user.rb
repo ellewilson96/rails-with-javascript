@@ -10,7 +10,7 @@ devise :database_authenticatable, :registerable,
   validates :password, presence: true
 
  has_many :grades
- has_many :students, through: :grades
+ has_many :students, through: :courses
  has_many :courses
 
  def self.from_omniauth(auth)
