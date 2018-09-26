@@ -6,13 +6,14 @@ Rails.application.routes.draw do
       }
 
   get '/students/smartest', :to => 'students#smartest'
+  get '/courses/enroll', :to => 'courses#enroll'
 
   resources :students do
     resources :grades
   end
 
   resources :courses
-  
+
   resources :users, only: [:show]
 
   root to: 'application#home'

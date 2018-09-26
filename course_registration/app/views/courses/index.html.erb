@@ -1,5 +1,4 @@
 <h2>This Semester's Courses</h2>
-<% @students = @courses.students.all %>
 <ol><% @courses.each do |course| %>
       <h3><%= course.name %> - <%= course.section %> - <%= @students.length %>
         <% if @students.length != 1 %>

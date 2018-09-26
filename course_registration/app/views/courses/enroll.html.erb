@@ -1,0 +1,3 @@
+<%= form_for(@student) do |f| %>
+  <% f.collection_check_boxes(:course_ids, Course.all, :section, :name) %>
+<% end %>

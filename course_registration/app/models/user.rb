@@ -12,6 +12,7 @@ devise :database_authenticatable, :registerable,
  has_many :grades
  has_many :students, through: :courses
  has_many :courses
+ has_many :rosters
 
  def self.from_omniauth(auth)
    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
