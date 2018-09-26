@@ -14,25 +14,20 @@
 ActiveRecord::Schema.define(version: 20180926173757) do
 
   create_table "courses", force: :cascade do |t|
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
     t.string   "name"
     t.string   "description"
     t.integer  "section"
-  end
-
-  create_table "courses_students", id: false, force: :cascade do |t|
-    t.integer "student_id", null: false
-    t.integer "course_id",  null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "grades", force: :cascade do |t|
     t.integer  "student_id"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string   "behavior"
     t.integer  "score"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "rosters", force: :cascade do |t|
@@ -41,10 +36,10 @@ ActiveRecord::Schema.define(version: 20180926173757) do
   end
 
   create_table "students", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string   "first_name"
     t.string   "last_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
