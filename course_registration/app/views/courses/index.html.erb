@@ -8,7 +8,7 @@
         Student
         <% end %></h3>
         <a href="#">Course Details</a><br>
-        <a href="#">View Students Enrolled in this Course</a><br>
+        <%= link_to "View Roster for This Course", roster_path(course.id) %><br>
     </h4></div>
   <% end %><br>
   <p><%= link_to "Add New Course for Fall 2018", new_course_path %></p>

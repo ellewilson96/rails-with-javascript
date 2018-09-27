@@ -10,9 +10,10 @@ devise :database_authenticatable, :registerable,
   validates :password, presence: true
 
  has_many :grades
+ has_many :students, through: :grades
  has_many :rosters
- has_many :students, through: :rosters
- has_many :courses
+ has_many :courses, through: :rosters
+
 
  def self.from_omniauth(auth)
    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

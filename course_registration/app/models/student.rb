@@ -1,8 +1,7 @@
-class Student < ActiveRecord::Base
-  has_many :grades
-  has_many :rosters
-  has_many :users
+class Student < ActiveRecord::Base  
   has_many :courses
+  has_many :grades
+  has_many :users, through: :grades
 
 
   validates :first_name, presence: true

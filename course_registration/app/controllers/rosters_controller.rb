@@ -6,7 +6,7 @@ class RostersController < ApplicationController
 
     def show
       @roster = Roster.find_by_id(params[:id])
-      @student = Student.find_by_id(params[:student_id])
+      @students = Student.all
     end
 
     def enroll
@@ -30,6 +30,6 @@ class RostersController < ApplicationController
     private
 
     def roster_params
-      params.require(:roster).permit(:course_id, :teacher_id, :student)
+      params.require(:roster).permit(:course_id, :teacher_id, :student_id)
     end
 end
