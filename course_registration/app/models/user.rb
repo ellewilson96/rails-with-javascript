@@ -11,8 +11,7 @@ devise :database_authenticatable, :registerable,
 
  has_many :grades
  has_many :students, through: :grades
- has_many :rosters
- has_many :courses, through: :rosters
+ has_many :courses
 
 
  def self.from_omniauth(auth)

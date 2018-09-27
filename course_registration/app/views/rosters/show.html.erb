@@ -1,8 +1,0 @@
-<h4>
-  <%= @course.name %> - Section <%= @course.section %><br>
-</h4>
-  <p>Taught by: <%= current_user.email %><br></p>
-  <h4>Enrolled Students:<br></h4>
-  <p><%= @course.students.each do |student| %>
-      <%= student.first_name %> <%= student.last_name%>
-    <% end %></p>
