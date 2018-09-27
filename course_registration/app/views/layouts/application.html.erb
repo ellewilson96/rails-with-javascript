@@ -6,8 +6,6 @@
     <%= link_to 'LOGOUT', destroy_user_session_path, method: :delete %> |
     <%= link_to "HOME", root_path %>
     <%= link_to "COURSES", courses_path %>
-    <%= link_to "STUDENTS", students_path %>
-    <%= link_to "GRADEBOOK", students_smartest_path %>
     <%= link_to "MY PROFILE", user_path(current_user.id) %>
   <% else %>
     <%= link_to "SIGN IN VIA FACEBOOK", user_facebook_omniauth_authorize_path %> |

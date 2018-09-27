@@ -1,7 +1,7 @@
 <div>
   <h3>
     <%= @student.first_name %> <%= @student.last_name%></h3>
-        <% @student.grades.each do |grade| %>
+        <% @grades.each do |grade| %>
   <h4>
       Behavior: <%= grade.behavior %><br>
       Score: <%= grade.score %><br>

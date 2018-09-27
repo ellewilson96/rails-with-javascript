@@ -1,0 +1,14 @@
+<h1>Course</h1>
+
+<p>
+  <b>Course Section</b>
+  <%=h @course.section %> - <%=h @course.name %>
+</p>
+<% if @course.students.size > 0 %>
+<p>
+  <b>Enrolled Students</b>
+  <%= @course.students %>
+</p>
+<% end %>
+
+<%= link_to 'Edit', edit_course_path(@course) %>

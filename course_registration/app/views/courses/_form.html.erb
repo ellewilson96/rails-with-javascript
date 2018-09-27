@@ -10,7 +10,8 @@
   </div>
 <% end %><br>
 
-<%= form_for @course do |f| %>
+<div class="course_form">
+  <h4><%= form_for @course do |f| %>
 
   <%= f.label :name %>
   <%= f.text_field :name %><br>
@@ -23,3 +24,5 @@
 
   <%= f.submit %>
   <% end %>
+</h4>
+</div>

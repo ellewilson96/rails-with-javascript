@@ -1,13 +1,10 @@
 class GradesController < ApplicationController
-  before_action :set_student
+  before_action :set_grade
 
   def index
-    @grades = @student.grades
-    respond_to do |format|
-         format.html { render :index }
-         format.json { render json: @grades }
+    @student = Student.find_by_id(params[:student_id])
+    @grades = Grade.all
   end
-end
 
   def new
   @student = Student.find_by_id(params[:student_id])
@@ -27,10 +24,7 @@ end
   end
 
   def show
-    respond_to do |format|
-     format.html { render :show }
-     format.json { render json: @grade }
-   end
+    @grade = Grade.find(params[:id])
  end
 
   def update
@@ -53,8 +47,8 @@ end
     params.require(:grade).permit(:student_id, :user_id, :score, :behavior)
   end
 
-  def set_student
-    @student = Student.find(params[:student_id])
+  def set_grade
+    @grade = Grade.find(params[:student_id])
   end
 
 end
