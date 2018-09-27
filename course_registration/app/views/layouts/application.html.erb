@@ -13,6 +13,7 @@
     <%= link_to 'SIGN UP', new_user_registration_path %> |
     <%= link_to 'LOGIN', new_user_session_path %>
 <% end %><br>
+    <div class="school">FLATIRON HIGH SCHOOL</div>
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
     <i class="fa fa-bars"></i>
   </a>
@@ -23,8 +24,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="contentBody" id="contentBody"><h1>Welcome to the Fall Semester!</h1>
-    <h2>Teachers of Flatiron High School Only</h2>
+  <div class="contentBody" id="contentBody"><h1>Welcome to the Fall Semester
+    <% if user_signed_in? %>
+    , <%= current_user.email %>!
+    <% else %>
+    !
+  <% end %>
+</h1>
     <p class="notice"><%= notice %></p>
           <p class="alert"><%= alert %></p>
   <%= yield %>

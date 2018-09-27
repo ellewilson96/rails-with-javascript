@@ -1,10 +1,10 @@
-<h4>View Your Courses</h4>
+<h3>View Your Courses</h3>
   <% @rosters.each do |roster| %>
 <div>
 <h3><%= roster.course.name %> - Section <%= roster.course.section %></h3>
-    <h4><a href="#">View Course Description</a><br>
+    <h4><a href="#">View Course Description</a><br></h4>
     <%= roster.course.description %><br>
-    <a href="#">View Students in This Course</a><br>
+    <h4><a href="#">View Students in This Course</a><br></h4>
     <%= @student.first_name %></h4>
 
   <% end %>

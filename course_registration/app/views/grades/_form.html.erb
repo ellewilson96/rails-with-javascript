@@ -9,14 +9,15 @@
     <% end %>
   </div>
 <% end %><br>
-
+<h3>
 <%= form_for @grade, url: "/students/#{@grade.student_id}/grades/#{@grade.id}" do |f| %>
 
-  <%= f.label :behavior %>
+  <%= f.label :behavior %>:
   <%= f.text_field :behavior %><br>
 
-  <%= f.label :score %>
+  <%= f.label :score %>:
   <%= f.number_field :score, min: 0, max: 100 %><br>
 
   <%= f.submit %>
   <% end %>
+</h3>

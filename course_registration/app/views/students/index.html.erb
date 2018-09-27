@@ -1,4 +1,4 @@
-  <h4>All Flatiron High School Students</h4>
+  <h3>All Flatiron High School Students</h3>
   <% @students.each do |student| %>
   <h3><%= student.first_name %> <%= student.last_name%></h3>
   <%= link_to "View #{student.first_name}'s Grades", student_grades_path(student) %><br>
