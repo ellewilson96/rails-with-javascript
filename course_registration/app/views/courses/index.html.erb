@@ -1,18 +1,1 @@
 <h2>This Semester's Courses</h2>
-<% @courses.each do |course| %>
-    <div class="course_info">
-        <h4><%= course.name %> - <%= course.section %> - <%= course.students.length %>
-        <% if @students.length != 1 %>
-        Students
-        <% else %>
-        Student
-        <% end %>
-      </h3>
-        <a href="#">Course Details</a><br>
-        <p><%= link_to 'Students In This Course', course_path(course) %><br>
-      <%= link_to "Add Student to This Course", course_path(course)  %></p>
-
-    </h4></div>
-  <% end %><br>
-  <p><%= link_to "Add New Course for Fall 2018", new_course_path %></p>
-</h4>

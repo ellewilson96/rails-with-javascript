@@ -1,7 +1,12 @@
 class CoursesController < ApplicationController
+  before_action :set_course
+
     def index
       @courses = Course.all
-      @students = Student.all
+      respond_to do |f|
+        f.html
+        f.json {render json: @courses}
+      end
     end
 
     def new
@@ -19,7 +24,10 @@ class CoursesController < ApplicationController
     end
 
     def show
-      @course = Course.find_by_id(params[:id])
+      respond_to do |f|
+        f.html
+        f.json {render json: @course}
+      end
     end
 
   def edit
@@ -53,5 +61,9 @@ end
 
     def course_params
       params.require(:course).permit(:name, :description, :section)
+    end
+
+    def set_course
+      @course = Course.find_by_id(params[:id])
     end
 end

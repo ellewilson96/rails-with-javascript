@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
   <div class="topnav" id="myTopnav">
     <% if user_signed_in? %>
     <%= link_to 'LOGOUT', destroy_user_session_path, method: :delete %> |
     <%= link_to "HOME", root_path %>
-    <%= link_to "COURSES", courses_path %>
+    <%= link_to "COURSES", courses_path, class: 'all_courses' %>
     <%= link_to "MY PROFILE", user_path(current_user.id) %>
   <% else %>
     <%= link_to "SIGN IN VIA FACEBOOK", user_facebook_omniauth_authorize_path %> |
@@ -13,26 +18,20 @@
     <%= link_to 'LOGIN', new_user_session_path %>
 <% end %><br>
     <div class="school">FLATIRON HIGH SCHOOL</div>
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-    <i class="fa fa-bars"></i>
-  </a>
-</div>
-  <title>Course Registration</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <div class="contentBody" id="contentBody"><h1>Welcome to the Fall Semester
-    <% if user_signed_in? %>
-    , <%= current_user.email %>!
-    <% else %>
-    !
-  <% end %>
+    </div>
+    </div>
+    <title>Course Registration</title>
+  <div class="contentBody" id="contentBody">
+      <h1>Welcome to the Fall Semester
+          <% if user_signed_in? %>
+    ,     <%= current_user.email %>!
+      <% else %>
+        !
+    <% end %>
 </h1>
     <p class="notice"><%= notice %></p>
           <p class="alert"><%= alert %></p>
-  <%= yield %>
-</div>
+      </div>
+      <%= yield %>
 </body>
 </html>

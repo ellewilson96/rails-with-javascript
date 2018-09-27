@@ -3,6 +3,10 @@ class StudentsController < ApplicationController
   def index
       @students = Student.all
       @grades = current_user.grades.all
+      respond_to do |f|
+        f.html
+        f.json {render json: @students}
+      end
   end
 
   def show
