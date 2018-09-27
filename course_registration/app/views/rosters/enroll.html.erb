@@ -1,0 +1,5 @@
+<%= form_for(@roster) do |f| %>
+<h4>Select a Course: <%= f.select :course_id, Course.all.map {|p| [p.name, p.section]}, include_blank: false %><br>
+Select a Student: <%= f.select :students, Student.all.map {|p| [p.first_name, p.last_name]}, include_blank: false %><br>
+</h4><%= f.submit %>
+<% end %>

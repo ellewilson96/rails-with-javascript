@@ -20,7 +20,6 @@ class CoursesController < ApplicationController
     def create
       @course = Course.new(course_params)
       if @course.save
-        Roster.create(:user_id => (current_user.id), :course_id => (@course.id))
         redirect_to user_path(current_user.id)
       else
         render :new

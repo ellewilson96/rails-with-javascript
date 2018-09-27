@@ -1,4 +1,0 @@
-<%= form_for(@roster) do |f| %>
-  <% f.collection_check_boxes(:student_ids, Student.all, :first_name, :last_name) %>
-  <% f.collection_check_boxes(:course_id, Course.all, :section, :name) %>
-<% end %>
