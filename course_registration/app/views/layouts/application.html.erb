@@ -22,33 +22,12 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<style>
-body {background-color: powderblue;
-      font-family: "Calibri", sans-serif;
-      text-align: center;}
-h1   {color: #0000cd;}
-h2   {color: #4c4cff;
-      font-style: italic;}
-p    {color: #191970;}
-h3   {font-style: underline;
-      font-style: italic;
-      color: #0000aa;}
-h4   {font-style: underline;
-      font-style: italic;
-      color: #0000dd;}
-a {
-  color: #191970;
-}
-.center {
-  list-style-position: inside;
-}
-</style>
 <body>
-  <h1>Welcome to the Fall Semester!</h1>
+  <div class="contentBody" id="contentBody"><h1>Welcome to the Fall Semester!</h1>
     <h2>Teachers of Flatiron High School Only</h2>
     <p class="notice"><%= notice %></p>
           <p class="alert"><%= alert %></p>
   <%= yield %>
-
+</div>
 </body>
 </html>

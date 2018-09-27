@@ -26,9 +26,9 @@
      display: block;
      color: #f2f2f2;
      text-align: center;
-     padding: 14px 16px;
+     padding: 20px 20px;
      text-decoration: none;
-     font-size: 17px;
+     font-size: 19px;
  }
 
  /* Change the color of links on hover */
@@ -47,3 +47,87 @@
  .topnav .icon {
      display: none;
  }
+
+ body {
+    max-width: 1250px;
+    margin: auto;
+    background-color: #292323;
+    font-family: "Calibri", sans-serif;
+    text-align: center;
+     }
+
+h1 { color: #ffffff;
+  font-family: 'Raleway', sans-serif;
+  font-size: 55px;
+  font-weight: 800;
+  line-height: 60px;
+  text-align: center;
+  text-transform: uppercase;
+  max-width: 850px;
+  margin: auto;
+  border: 10px solid #1D1616;
+  padding: 10px;
+}
+
+h2 {
+  color: #B4B2B2;
+  font-family: 'Raleway',sans-serif;
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 24px;
+  text-align: center;
+}
+
+
+h3 {
+  color: #919090;
+  font-family: 'Raleway',sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 20px;
+  margin: 0 0 24px;
+  text-align: center;
+}
+
+ h4   {
+   color: #343333;
+   font-family: 'Raleway',sans-serif;
+   font-size: 15px;
+   font-weight: 800;
+   line-height: 20px;
+   margin: 0 0 24px;
+   text-align: center;
+  }
+
+
+  p {
+    color: #f8f8f8;
+    font-family: 'Raleway',sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 32px;
+    margin: 0 0 24px;
+
+  }
+
+a {
+  color: #c8c8c8;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #1c1c1c;
+  text-decoration: underline;
+}
+
+.contentBody {
+    max-width: 1000px;
+    margin: auto;
+    border: 40px solid #1D1616;
+    padding: 25px;
+    text-align: center;
+}
+
+.header {
+
+}
