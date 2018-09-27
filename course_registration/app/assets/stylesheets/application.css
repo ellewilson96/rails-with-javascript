@@ -48,12 +48,17 @@
      display: none;
  }
 
+ div {
+    box-sizing: border-box;
+ }
+
  body {
-    max-width: 1250px;
+    max-width: 100%;
     margin: auto;
     background-color: #292323;
-    font-family: "Calibri", sans-serif;
+    font-family: "Raleway", sans-serif;
     text-align: center;
+    border: 10px solid #ffffff;
      }
 
 h1 { color: #ffffff;
@@ -82,17 +87,17 @@ h2 {
 h3 {
   color: #919090;
   font-family: 'Raleway',sans-serif;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 800;
-  line-height: 20px;
-  margin: 0 0 10px;
+  line-height: 30px;
+  margin: 0 0 20px;
   text-align: center;
 }
 
  h4   {
-   color: #343333;
+   color: #c0c5ce;
    font-family: 'Raleway',sans-serif;
-   font-size: 15px;
+   font-size: 18px;
    font-weight: 800;
    line-height: 20px;
    margin: 0 0 10px;
@@ -111,17 +116,31 @@ h3 {
   }
 
 a {
-  color: #c8c8c8;
+  color: #5f6266;
   text-decoration: underline;
+  font-family: 'Raleway',sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 20px;
+  margin: 0 0 10px;
+  text-align: center;
 }
 
 a:hover {
   color: #1c1c1c;
   text-decoration: underline;
+  font-family: 'Raleway',sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 20px;
+  margin: 0 0 10px;
+  text-align: center;
 }
 
 .contentBody {
+  display: block;
     max-width: 1000px;
+    max-height: 100%;
     margin: auto;
     border: 40px solid #1D1616;
     padding: 25px;

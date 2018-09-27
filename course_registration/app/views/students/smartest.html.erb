@@ -1,7 +1,8 @@
-<h1>Top 3 Student Grades! </h1>
+<h1>Top 3 Students</h1>
   <h2><% @grades = Grade.smartest_students %>
     <% @grades.each do |grade| %>
     <p><%= grade.student.first_name %> <%= grade.student.last_name %><br>
       <%= grade.score %> - <%= grade.behavior %></p>
-  <% end %>
+  <% end %><br>
+  <a href="#">Load More</a>
 </h2>

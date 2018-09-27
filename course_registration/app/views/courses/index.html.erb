@@ -1,6 +1,7 @@
 <h2>This Semester's Courses</h2>
-<ol><% @courses.each do |course| %>
-      <h3><%= course.name %> - <%= course.section %> - <%= @students.length %>
+<% @courses.each do |course| %>
+    <div class="course_info">
+        <h4><%= course.name %> - <%= course.section %> - <%= @students.length %>
         <% if @students.length != 1 %>
         Students
         <% else %>
@@ -8,7 +9,7 @@
         <% end %></h3>
         <a href="#">Course Details</a><br>
         <a href="#">View Students Enrolled in this Course</a>
-    </ol>
+    </h4></div>
   <% end %>
   <p><%= link_to "Add New Course for Fall 2018", new_course_path %></p>
 </h4>
