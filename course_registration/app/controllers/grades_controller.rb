@@ -1,9 +1,8 @@
 class GradesController < ApplicationController
-  before_action :set_grade
 
   def index
     @student = Student.find_by_id(params[:student_id])
-    @grades = Grade.all
+    @grades = @student.grades
   end
 
   def new
@@ -47,8 +46,5 @@ class GradesController < ApplicationController
     params.require(:grade).permit(:student_id, :user_id, :score, :behavior)
   end
 
-  def set_grade
-    @grade = Grade.find(params[:student_id])
-  end
 
 end

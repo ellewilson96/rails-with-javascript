@@ -1,14 +1,17 @@
-<h1>Course</h1>
-
 <p>
   <b>Course Section</b>
   <%=h @course.section %> - <%=h @course.name %>
 </p>
-<% if @course.students.size > 0 %>
-<p>
   <b>Enrolled Students</b>
-  <%= @course.students %>
-</p>
-<% end %>
-
+  <%= @course.students.each do |c| %>
+  <%= c.first_name %> <%= c.last_name %><br>
+  	    <%= collection_select_tag c.id, 1, @course.enrolled?(c),
+  		  :onclick => remote_function(
+  		  :url => save_course_path(@course),
+  		  :with => "'student=#{c.id}&amp;show=' + this.checked",
+  		  :method => :post) %>
+  	<%= c.name %>
+    <% end %>
+    <%= link_to "Add a New Student", new_student_path %>
+  <%= link_to 'Back', courses_path %>
 <%= link_to 'Edit', edit_course_path(@course) %>

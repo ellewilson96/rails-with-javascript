@@ -10,7 +10,8 @@
   </div>
 <% end %><br>
 <h3>
-<%= form_for @grade, url: "/students/#{@grade.student_id}/grades/#{@grade.id}" do |f| %>
+<%= form_for @grade, url: "/students/#{@student.id}/grades/#{@grade.id}" do |f| %>
+  <% hidden_field_tag("student_id", "1", :id => @student.id) %>
 
   <%= f.label :behavior %>:
   <%= f.text_field :behavior %><br>

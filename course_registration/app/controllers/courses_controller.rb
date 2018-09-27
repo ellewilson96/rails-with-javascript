@@ -4,7 +4,6 @@ class CoursesController < ApplicationController
       @students = Student.all
     end
 
-
     def new
       @course = Course.new
     end
@@ -19,14 +18,8 @@ class CoursesController < ApplicationController
       end
     end
 
-
     def show
       @course = Course.find_by_id(params[:id])
-    end
-
-    def enroll
-      @student = Student.find_by_id(params[:id])
-      render :enroll
     end
 
   def edit
@@ -44,9 +37,9 @@ class CoursesController < ApplicationController
   end
 end
 
-    def save
+  def save
         @course = Course.find(params[:id])
-          @student = Student.find(params[:course])
+        @student = Student.find(params[:course])
         if params[:show] == "true"
     @course.courses << @student
   else
