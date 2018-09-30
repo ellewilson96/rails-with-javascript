@@ -1,11 +1,10 @@
 class CoursesController < ApplicationController
-  before_action :set_course
 
     def index
       @courses = Course.all
-      respond_to do |f|
-        f.html
-        f.json {render json: @courses}
+      respond_to do |format|
+        format.html { render :index }
+        format.json {render json: @courses}
       end
     end
 
@@ -15,18 +14,21 @@ class CoursesController < ApplicationController
 
     def create
       @course = Course.new(course_params)
+      @course.user_id = current_user.id
+
       if @course.save
         flash[:notice] = 'Student record was successfully created.'
-        redirect_to user_path(current_user.id)
+        redirect_to @course
       else
         render :new
       end
     end
 
     def show
-      respond_to do |f|
-        f.html
-        f.json {render json: @course}
+      @course = Course.find(params[:id])
+      respond_to do |format|
+        format.html { render :show }
+        format.json { render json: @course }
       end
     end
 
@@ -39,7 +41,7 @@ class CoursesController < ApplicationController
 
   if @course.update_attributes(course_params)
     flash[:notice] = 'Course was successfully updated.'
-    redirect_to(@course)
+    redirect_to @course
   else
     render :action => "edit"
   end
@@ -64,6 +66,6 @@ end
     end
 
     def set_course
-      @course = Course.find_by_id(params[:id])
+      @course = Course.find(params[:id])
     end
 end

@@ -6,7 +6,4 @@ class Course < ActiveRecord::Base
   validates :description, presence: true
   validates :section, presence: true
 
-  def enrolled?(student)
-    students.include?(student)
-  end
 end

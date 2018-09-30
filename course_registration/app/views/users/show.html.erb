@@ -3,7 +3,7 @@
 <div>
 <h4><%= course.name %> - Section <%= course.section %></h4>
     <h4><a href="#">View Course Description</a><br>
-      <%= link_to "View Students in This Course", courses_path(course.id)%><br></h4>
+      <%= link_to "View Students in This Course", course_path(course.id)%><br></h4>
 
   <% end %>
     <h4><%= link_to 'Register to Teach a New Course', new_course_path %><br>

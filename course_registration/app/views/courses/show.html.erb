@@ -1,10 +1,10 @@
-<p>
-  <b>Course Section</b>
-  <%=h @course.section %> - <%=h @course.name %>
-</p>
-  <b>Enrolled Students</b>
+  <h2><%= @course.name %></h2>
+  <h3>Section <%= @course.section %></h3>
+  <h4>Enrolled Students</h4><br>
 
+  <% @course.students.each do |student| %>
+  <%= student.first_name %> <%= student.last_name %><br>
+  <% end %>
 
-    <%= link_to "Add a New Student", new_student_path %>
+    <%= link_to "Add a New Student", new_student_path %><br>
   <%= link_to 'Back', courses_path %>
-<%= link_to 'Edit', edit_course_path(@course) %>

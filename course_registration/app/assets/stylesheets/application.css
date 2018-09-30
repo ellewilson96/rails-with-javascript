@@ -32,6 +32,17 @@
      border-right: 2px solid #bbb;
 }
 
+.topnav a.school {
+    float: right;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 5px 30px;
+    text-decoration: none;
+    font-size: 19px;
+    border: 1px solid #ffffff;
+}
+
 li:last-child {
     border-right: none;
 }
@@ -61,10 +72,9 @@ li:last-child {
  body {
    max-height: 100%;
     margin: auto;
-    background-image: linear-gradient(#8e969e, #1d2023);
+    background-color: #1d2023;
     font-family: "Raleway", sans-serif;
     text-align: center;
-    border: 10px solid #87739e;
      }
 
 h1 { color: #ffffff;
@@ -155,15 +165,4 @@ a:hover {
     border-width: 7px;
     padding: 25px;
     text-align: center;
-}
-
-.school {
-    float: right;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 5px 30px;
-    text-decoration: none;
-    font-size: 19px;
-    border: 1px solid #ffffff;
 }

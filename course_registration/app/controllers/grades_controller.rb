@@ -12,19 +12,13 @@ class GradesController < ApplicationController
 
   def create
     @grade = current_user.grades.build(grade_params)
-    if @grade.save
-      respond_to do |format|
-           format.html { redirect_to students_path }
-           format.json { render json: @grade, status: 201 }
-         end
-        else
-      render :new
-    end
+      if @grade.save
+    render json: @grade, status: 201
+  else
+      flash[:message] = @grade.errors.full_messages
+    render json: {errors: @grade.errors.full_messages}, status: 400
   end
-
-  def show
-    @grade = Grade.find(params[:id])
- end
+end
 
   def update
     @url = student_grade_path
