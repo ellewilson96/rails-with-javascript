@@ -21,5 +21,8 @@
   <%= f.label :last_name %>
   <%= f.text_field :last_name %><br>
 
+  <%= f.label :course_id %>
+  <%= f.collection_select :course_ids, Course.all, :id, :name %>
+
   <%= f.submit %>
   <% end %>

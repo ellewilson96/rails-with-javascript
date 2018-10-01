@@ -1,6 +1,6 @@
-class CreateAttendanceSheets < ActiveRecord::Migration
+class CreateRegistrations < ActiveRecord::Migration
   def change
-    create_table :attendance_sheets do |t|
+    create_table :registrations do |t|
       t.integer :student_id
       t.integer :course_id
 

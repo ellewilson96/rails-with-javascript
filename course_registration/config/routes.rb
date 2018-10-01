@@ -5,7 +5,9 @@ Rails.application.routes.draw do
         omniauth_callbacks: 'users/omniauth_callbacks'
       }
 
-  resources :courses, only: [:show, :index, :new, :create]
+  resources :courses, only: [:show, :index, :new, :create] do
+    resources :registrations, only: [:new, :create]
+  end
 
 
   resources :users, only: [:show]

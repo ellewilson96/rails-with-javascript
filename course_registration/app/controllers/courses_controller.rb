@@ -62,7 +62,7 @@ end
     private
 
     def course_params
-      params.require(:course).permit(:name, :description, :section)
+      params.require(:course).permit(:name, :description, :section, :user_id, :student_id)
     end
 
     def set_course
