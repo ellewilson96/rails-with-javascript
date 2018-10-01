@@ -1,14 +1,14 @@
 // Place all the styles related to the Courses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.course_info {
-  display: block;
-  margin: auto;
-  border: 2px solid #ffffff;
-  padding: 10px;
-  max-width: 60%;
-  box-shadow: 5px 5px 10px grey;
-  border-radius: 25px;
+.course-details {
+  font-family: 'Raleway', sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  color: #919090;
+  line-height: 15px;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .course_form {

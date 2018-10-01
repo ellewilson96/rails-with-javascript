@@ -1,13 +1,15 @@
-<h2>This Semester's Courses</h2>
+<div class="container">
+  <h2>This Semester's Courses</h2>
+    <% @courses.each do |course| %>
+  <h3><%= course.section %> - <%= course.name %><br></h3>
+</div>
 
-<% @courses.each do |course| %>
-  <h3><%= course.section %> - <%= course.name %><br>
+<div id="description-<%= course.id %>">
+  <a href="#" data-id="<%= course.id %>" class="course-details">View Description</a>
 
-<div class="load_description">
-  <a href="#">View Description</a></h3>
 </div>
 
 <% end %><br>
-
+      <%= link_to "Add a New Course", new_course_path %><br>
     <%= link_to "Add a New Student", new_student_path %><br>
   <%= link_to 'Back', courses_path %>
