@@ -1,0 +1,12 @@
+    <div class="school-banner">
+        <div class="school-text" <%= link_to 'FLATIRON HIGH SCHOOL', root_path %></div>
+
+<% if user_signed_in? %>
+
+    <div class="school-logged-in">
+
+  You are logged in as <%= current_user.email %>.
+  <% else %>
+  <% end %>
+  </div>
+</div>

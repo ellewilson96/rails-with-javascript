@@ -12,48 +12,12 @@
   </head>
 
   <body>
-    <div class="wrapper">
-      <div class="topnav" id="myTopnav">
+<%= render 'layouts/school' %>
+  <%= render 'layouts/navbar' %>
 
-        <% if user_signed_in? %>
-
-            <a class="nav-link" <%= link_to 'LOGOUT', destroy_user_session_path, method: :delete %></a>
-
-            <a class="nav-link" <%= link_to "HOME", root_path %></a>
-
-            <a class="nav-link" <%= link_to "COURSES", courses_path, class: 'all_courses' %></a>
-
-            <a class="nav-link" <%= link_to "MY PROFILE", user_path(current_user.id) %></a>
-
-            <% else %>
-
-            <a class="nav-link" <%= link_to "SIGN IN VIA FACEBOOK", user_facebook_omniauth_authorize_path %></a>
-
-            <a class="nav-link" <%= link_to 'SIGN UP', new_user_registration_path %></a>
-
-            <a class="nav-link" <%= link_to 'LOGIN', new_user_session_path %></a>
-
-      <% end %>
-    </div>
-</div>
-        <div class="school-banner">
-            <div class="school-text" <%= link_to 'FLATIRON HIGH SCHOOL', root_path %></div>
+    <div class="flexbox-container">
+	     <div><h3>Column 1</h3></div>
+	      <div><h3><%= yield %></h3></div>
       </div>
-
-      <% if user_signed_in? %>
-      <div class="header-wrapper">
-      <h3>You are logged in as <%= current_user.email %>.</h3>
-      <% else %>
-      <script>
-      $("#header-wrapper").hide();
-    </script>
-      <% end %>
-      </div>
-
-    <div class="body-wrapper">
-      <%= yield %>
-
-    </div>
-
 </body>
 </html>

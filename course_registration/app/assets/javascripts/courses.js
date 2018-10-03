@@ -5,15 +5,11 @@ $(function () {
       //prevent default click acction
     e.preventDefault();
 
-      // hide view description link
-    $('.course-details').hide();
-
     // set course id to the course id of the clicked link
-    let courseID = $(".course-details").attr("data-id")
-      $.get("/courses/" + courseID + ".json", function(data) {
-
-      let courseHtml = data.description
-      $('#description-'+courseID).append("<h4>"+courseHtml+"</h4>");
+      $.get("/courses.json", function(data) {
+      const id = $(this).data('id')
+      let courseHtml = this.data.description
+      $('#description-'+id).append("<h4>"+courseHtml+"</h4>");
 
     })
   })
